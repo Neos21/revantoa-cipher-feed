@@ -1,0 +1,86 @@
+/* Tailwind CSS を使用する */
+@import "tailwindcss";
+/* daisyUI を使用する */
+@plugin "daisyui" {
+  themes: light --default;
+  exclude: properties;  /* `@property --radialprogress Unknown at rule: @property` のワーニングを消すための指定 https://github.com/saadeghi/daisyui/issues/3882 */
+};
+/* プライマリカラーを調整する https://daisyui.com/theme-generator/ */
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  
+  /* Base : 純黒ベース (SynthWave のコントラスト感を純黒で再現) */
+  --color-base-100: oklch(0% 0 0);        /* #000000 */
+  --color-base-200: oklch(8% 0.04 209);   /* Abyss 風の深青みがかった黒 */
+  --color-base-300: oklch(13% 0.06 209);
+  --color-base-content: oklch(88% 0.28 135);  /* #88ff00 相当 */
+  /* Primary : #88ff00 系 (SynthWave のネオン感) */
+  --color-primary: oklch(88% 0.28 135);
+  --color-primary-content: oklch(22% 0.12 135);
+  /* Secondary 以降 */
+  --color-secondary: oklch(75% 0.28 340);
+  --color-secondary-content: oklch(22% 0.12 340);
+  --color-accent: oklch(43% 0 0);
+  --color-accent-content: oklch(98% 0 0);
+  --color-neutral: oklch(25% 0.06 209);
+  --color-neutral-content: oklch(88% 0.28 135);
+  /* Semantic : Abyss のカラーをそのまま採用 */
+  --color-info: oklch(74% 0.16 232.661);
+  --color-info-content: oklch(29% 0.066 243.157);
+  --color-success: oklch(79% 0.209 151.711);
+  --color-success-content: oklch(26% 0.065 152.934);
+  --color-warning: oklch(84.8% 0.1962 84.62);
+  --color-warning-content: oklch(44.8% 0.1962 84.62);
+  --color-error: oklch(65% 0.1985 24.22);
+  --color-error-content: oklch(27% 0.1985 24.22);
+  /* Shape : SynthWave の丸みを採用 */
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;  /* Abyss の Depth */
+  --noise: 0;
+}
+
+@theme {
+  /* ウェブフォントとして読み込んでおいた M Plus 1 Code をデフォルトに追加する */
+  --font-sans: "M PLUS 1 Code", "Noto Sans Mono CJK JP", Osaka-mono, "MS Gothic", Menlo, Consolas, Courier, "Courier New", monospace, "Apple Color Emoji", "Noto Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-mono: "M PLUS 1 Code", "Noto Sans Mono CJK JP", Osaka-mono, "MS Gothic", Menlo, Consolas, Courier, "Courier New", monospace, "Apple Color Emoji", "Noto Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+html {
+  @apply h-full break-all cursor-default selection:bg-primary selection:text-primary-content;
+  
+  scrollbar-gutter: stable;  /* スクロールバーが表示されない時も余白を作る・`overflow-y: scroll` だとモーダルウィンドウ表示時に背景がスクロールしてしまうため */
+  text-decoration-skip-ink: none;  /* 下線を途切れさせない */
+}
+
+body {
+  @apply h-full;
+}
+
+label, .label {
+  @apply whitespace-normal;
+}
+
+input[type="text"], input[type="password"], .input,
+textarea, .textarea {
+  font-size: 17px;
+}
+
+.loading-message-wrapper {
+  /* 2つの秒数は先が `animation-duration` (アニメーションの時間)・後が `animation-delay` (開始の遅延) */
+  animation: loading-message-wrapper-animation .5s 5s ease forwards;
+  opacity: 0;
+}
+  @keyframes loading-message-wrapper-animation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

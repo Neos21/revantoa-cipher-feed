@@ -1,0 +1,13 @@
+{
+  "name": "CipherFeed",
+  "short_name": "CipherFeed",
+  "lang": "ja",
+  "theme_color": "#88ff00",
+  "background_color": "#000000",
+  "display": "standalone",
+  "start_url": "https://cipher-feed.revantoa.workers.dev",
+  "icons": [
+    { "src": "icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
