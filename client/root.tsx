@@ -45,7 +45,7 @@ export const Layout = ({ children }: { children: ReactNode }): ReactElement => {
         <link rel="preconnect" href="https://static.cloudflareinsights.com" />
         <Links />
         {/* NOTE : 以下の `data-cf-beacon` 属性のみ、シングルクォートで囲み、内部をダブルクォートで記しておくことを許可する */}
-        <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"ef212dc70de54174b4e189c8115549e4"}' />
+        <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"【TODO】"}' />
       </head>
       <body suppressHydrationWarning>
         {children}

@@ -54,14 +54,6 @@ export default function Index(): ReactNode {
             <Link to="/login" className="btn btn-outline border-base-content/20 hover:bg-base-content hover:border-transparent hover:text-base-100 w-full rounded-xl">ログインページへ</Link>
           </div>
         </div>
-        
-        <div className="mt-8 text-right">
-          <a href="https://colonet.revantoa.workers.dev" target="_blank" className="hover:underline">Colonet</a>
-          <span className="mx-1 text-base-content/50">|</span>
-          <a href="https://key-glyph.revantoa.workers.dev" target="_blank" className="hover:underline">KeyGlyph</a>
-          <span className="mx-1 text-base-content/50">|</span>
-          <a href="https://fight-for-your-right.revantoa.workers.dev" target="_blank" className="hover:underline">Fight For Your Right</a>
-        </div>
       </div>
     );
   }

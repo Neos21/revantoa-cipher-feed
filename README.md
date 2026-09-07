@@ -1,6 +1,6 @@
 # CipherFeed
 
-<https://cipher-feed.revantoa.workers.dev>
+`https://cipher-feed.revantoa.workers.dev`
 
 CipherFeed は、暗号化投稿の一連の処理を UI 上で確認できる SNS です。
 
